@@ -7,10 +7,11 @@ R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
-START_TIME=$(date +%s)
-mkdir -p $LOGS_FOLDER
 SCRIPT_DIR=$PWD
+START_TIME=$(date +%s)
 MONGODB_HOST=mongodb.devopsd88s.online
+
+mkdir -p $LOGS_FOLDER
 
 echo "$(date "+%Y-%m-%d %H:%M:%S") | Script started executing at: $(date)" | tee -a $LOGS_FILE
 
@@ -50,7 +51,8 @@ app_setup(){
     else 
         echo -e "Roboshop user already exist..$Y Skipping $N"
     fi
-
+    #downloading app
+    
     mkdir -p /app 
     VALIDATE $? "Creating app directroy"
 
