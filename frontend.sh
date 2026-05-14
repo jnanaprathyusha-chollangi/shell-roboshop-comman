@@ -5,7 +5,7 @@ source ./common.sh
 app_name=frontend
 app_dir=/usr/share/nginx/html
 check_root
-python_setup
+
 
 dnf module disable nginx -y &>>$LOGS_FILE
 dnf module enable nginx:1.24 -y &>>$LOGS_FILE
@@ -13,7 +13,7 @@ dnf install nginx -y &>>$LOGS_FILE
 VALIDATE $? "Installing Nginx"
 
 systemctl enable nginx  &>>$LOGS_FILE
-systemctl start nginx 
+systemctl start nginx   &>>$LOGS_FILE
 VALIDATE $? "Enabled and started nginx"
 
 rm -rf /usr/share/nginx/html/* 
