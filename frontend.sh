@@ -5,6 +5,7 @@ source ./common.sh
 app_name=frontend
 app_dir=/usr/share/nginx/html
 check_root
+python_setup
 
 dnf module disable nginx -y &>>$LOGS_FILE
 dnf module enable nginx:1.24 -y &>>$LOGS_FILE
